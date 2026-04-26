@@ -4,8 +4,8 @@ import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Stars
 function App() {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+      <div className="relative z-0" style={{ background: "#F5ECD2" }}>
+        <div>
           <Navbar />
           <Hero />
         </div>
