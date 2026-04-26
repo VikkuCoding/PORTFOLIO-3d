@@ -10,12 +10,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "vercel-install": "npm install --legacy-peer-deps"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.0",
+    "@supabase/supabase-js": "^2.104.1",
     "framer-motion": "^12.38.0",
     "maath": "^0.10.8",
     "math": "^0.0.3",
