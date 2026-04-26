@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "#f3f4f6",
+        primary: "#F5ECD2",
+        secondary: "#8B1A1A",
+        tertiary: "#EDE0C4",
+        "black-100": "#E8D5B0",
+        "black-200": "#DFC99A",
+        "white-100": "#8B1A1A",
       },
       boxShadow: {
-        card: "0px 35px 120px -15px #211e35",
+        card: "0px 35px 120px -15px #8B1A1A33",
       },
       screens: {
         xs: "450px",

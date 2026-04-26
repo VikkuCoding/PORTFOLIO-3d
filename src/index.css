@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: 'Playfair Display', serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F5ECD2;
+  color: #8B1A1A;
+}
+
+.hash-span {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
+}
+
+.black-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(139, 26, 26, 0) 0%,
+    rgba(139, 26, 26, 1) 100%
+  );
+}
+
+.violet-gradient {
+  background: linear-gradient(
+    to bottom,
+    #8B1A1A,
+    rgba(139, 26, 26, 0)
+  );
+}
+
+.green-pink-gradient {
+  background: linear-gradient(
+    to right,
+    #8B1A1A,
+    #C5A028
+  );
+}
+
+.blue-text-gradient {
+  background: linear-gradient(to right, #8B1A1A, #C5A028);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.green-text-gradient {
+  background: linear-gradient(to right, #C5A028, #8B1A1A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pink-text-gradient {
+  background: linear-gradient(to right, #8B1A1A, #C5A028);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

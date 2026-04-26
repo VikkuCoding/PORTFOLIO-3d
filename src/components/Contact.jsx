@@ -42,49 +42,54 @@ const Contact = () => {
     <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        className="flex-[0.75] p-8 rounded-2xl"
+        style={{ background: "#EDE0C4", border: "1px solid #8B1A1A" }}
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <p className="sm:text-[18px] text-[14px] text-[#8B1A1A] uppercase tracking-wider">Get in touch</p>
+        <h3 className="text-[#8B1A1A] font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">Contact.</h3>
 
         <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
+            <span className="text-[#8B1A1A] font-medium mb-4">Your Name</span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="py-4 px-6 rounded-lg outline-none border-none font-medium"
+              style={{ background: "#DFC99A", color: "#8B1A1A" }}
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Email</span>
+            <span className="text-[#8B1A1A] font-medium mb-4">Your Email</span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="py-4 px-6 rounded-lg outline-none border-none font-medium"
+              style={{ background: "#DFC99A", color: "#8B1A1A" }}
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
+            <span className="text-[#8B1A1A] font-medium mb-4">Your Message</span>
             <textarea
               rows={7}
               name="message"
               value={form.message}
               onChange={handleChange}
               placeholder="What do you want to say?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="py-4 px-6 rounded-lg outline-none border-none font-medium"
+              style={{ background: "#DFC99A", color: "#8B1A1A" }}
             />
           </label>
 
           <button
             type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+            className="py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md"
+            style={{ background: "#8B1A1A", color: "#F5ECD2" }}
           >
             {loading ? "Sending..." : "Send"}
           </button>
