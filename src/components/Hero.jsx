@@ -2,6 +2,27 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
+const MarqueeText = () => {
+  const texts = ["Graphic Designer", "Video Editor", "React Developer", "3D Artist", "Creative Freelancer", "Brand Identity", "Motion Graphics"];
+  
+  return (
+    <div className="absolute bottom-24 w-full overflow-hidden py-3" style={{ borderTop: "1px solid #8B1A1A", borderBottom: "1px solid #8B1A1A" }}>
+      <motion.div
+        className="flex gap-8 whitespace-nowrap"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      >
+        {[...texts, ...texts].map((text, i) => (
+          <span key={i} className="text-[#8B1A1A] text-[18px] font-medium flex items-center gap-8">
+            {text}
+            <span className="text-[#C5A028] text-[20px]">✦</span>
+          </span>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
 const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">
@@ -23,6 +44,8 @@ const Hero = () => {
       </div>
 
       <ComputersCanvas />
+
+      <MarqueeText />
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
