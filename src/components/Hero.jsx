@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
 
 const MarqueeText = () => {
   const texts = ["Graphic Designer", "Video Editor", "React Developer", "3D Artist", "Creative Freelancer", "Brand Identity", "Motion Graphics"];
@@ -42,8 +41,6 @@ const Hero = () => {
           </p>
         </div>
       </div>
-
-      <ComputersCanvas />
 
       <MarqueeText />
 
