@@ -3,7 +3,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Suspense, useRef } from "react";
 
 function Model() {
-  const model = useGLTF("/models/Astronaut.glb");
+ const model = useGLTF("/Astronaut.glb");
   const ref = useRef();
 
   useFrame(({ clock }) => {
