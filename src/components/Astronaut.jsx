@@ -1,6 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Suspense, useRef } from "react";
+import { OrbitControls, useGLTF, Center } from "@react-three/drei";
 
 function Model() {
  const model = useGLTF("/Astronaut.glb");
@@ -12,12 +13,13 @@ function Model() {
   });
 
   return (
-    <primitive
-      ref={ref}
-      object={model.scene}
-      scale={2}
-      position={[0, -1.2, 0]}
-    />
+   <Center>
+  <primitive
+    ref={ref}
+    object={model.scene}
+    scale={0.35}
+  />
+</Center>
   );
 }
 
