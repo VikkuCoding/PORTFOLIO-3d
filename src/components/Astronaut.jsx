@@ -1,51 +1,41 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
-import { Suspense, useRef } from "react";import { OrbitControls, useGLTF, Center } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Float, Center, useGLTF } from "@react-three/drei";
+import { Suspense } from "react";
 
-function Model() {
+function AstronautModel() {
   const { scene } = useGLTF("/Astronaut.glb");
-  const ref = useRef();
-
-  useFrame(({ clock }) => {
-    if (!ref.current) return;
-
-    ref.current.position.y = Math.sin(clock.elapsedTime * 0.8) * 0.12;
-    ref.current.rotation.y = Math.sin(clock.elapsedTime * 0.5) * 0.2;
-  });
 
   return (
-    <primitive
-      ref={ref}
-      object={scene}
-      scale={0.018}
-      position={[0, -1.55, 0]}
-      rotation={[0, Math.PI, 0]}
-    />
+    <Float speed={2} rotationIntensity={0.4} floatIntensity={0.8}>
+      <Center>
+        <primitive
+          object={scene}
+          scale={80}
+          rotation={[0, Math.PI, 0]}
+        />
+      </Center>
+    </Float>
   );
 }
 
+useGLTF.preload("/Astronaut.glb");
 
 export default function Astronaut() {
   return (
-    <div className="w-full h-[600px] relative">
-      {/* Glow */}
-      <div className="absolute inset-0 flex justify-center items-center">
-        <div className="w-96 h-96 rounded-full bg-[#C5A028]/10 blur-3xl" />
-      </div>
-
-      <Canvas camera={{ position: [0, 0.3, 7], fov: 35 }}>
+    <div className="w-full h-[650px]">
+      <Canvas camera={{ position: [0, 0, 6], fov: 40 }}>
         <ambientLight intensity={2} />
-        <directionalLight position={[2, 2, 2]} intensity={2} />
+        <directionalLight position={[5, 5, 5]} intensity={3} />
 
         <Suspense fallback={null}>
-          <Model />
+          <AstronautModel />
         </Suspense>
 
         <OrbitControls
           enableZoom={false}
           enablePan={false}
           autoRotate
-          autoRotateSpeed={1}
+          autoRotateSpeed={0.8}
         />
       </Canvas>
     </div>
